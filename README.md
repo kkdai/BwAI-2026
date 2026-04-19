@@ -13,7 +13,7 @@ Slides and related material about BwAI2026 training.
 - [20260326 [Gemini] Tool Combo 實戰：在單次 API 呼叫中結合 Maps Grounding 與 Places API 打造 LINE 聚會地點小幫手](https://www.evanlin.com/gemini3-flash-combo/)
 
 ## Gemini CLI 建議裝的官方 MCP 
--
+
 - [[Gemini CLI] Google Developer Knowledge API 與 MCP Server：為你的 AI 助手裝上官方知識庫](https://www.evanlin.com/gemini-cli-developer-mcp/)
   - 到 Google Developer Console 打開 "Developer Knowledge API"
   - 拿到相關 API Key
@@ -27,7 +27,7 @@ Slides and related material about BwAI2026 training.
   - 安裝 MCP 指令 `gemini mcp add -t http -H "X-Goog-Api-Key: YOUR_API_KEY" google-developer-knowledge https://developerknowledge.googleapis.com/mcp --scope user`
 - [Google Maps Platform Code Assist (MCP)安裝教學與範例](https://www.evanlin.com/map-mcp-grounding/)
   - 安裝方式 `gemini mcp add google-maps-platform-code-assist npx -y @googlemaps/code-assist-mcp@latest`
-- 
+
 
 ## 更多 AI 工程師需要工具
 
