@@ -90,11 +90,41 @@ cd bwai2026-sample
 ```
 
 ## 🔑 第一階段：取得 LINE 開發金鑰
-1. **建立官方帳號**：進入 [LINE Business ID](https://manager.line.biz/) 建立新帳號。
-2. **啟用 Messaging API**：在設定中啟用，並建立 Provider。
-3. **取得金鑰**：在 [LINE Developers Console](https://developers.line.biz/console/) 取得：
-   - `Channel Secret` (Basic settings)
-   - `Channel Access Token` (Messaging API -> Issue)
+
+### 1. 建立官方帳號
+1.  進入 [LINE Business ID](https://manager.line.biz/) 登入頁面。
+2.  存取 **LINE Official Account Manager**，選擇「使用 LINE 帳號登入」或「使用商用帳號登入」。
+3.  **建立新帳號**：
+    *   **帳號名稱**：你的 Bot 名稱。
+    *   **公司/團體名稱**：可填寫個人。
+    *   **業種**：選擇適合的分類。
+    *   **電子郵件信箱**。
+4.  確認資料無誤後點擊「送出」。
+
+### 2. 啟用 Messaging API
+1.  在後台右上角點擊「**設定**」，左側選單點選「**Messaging API**」。
+2.  點擊「**啟用 Messaging API**」。
+3.  **選擇/建立服務提供者 (Provider)**：輸入開發商名稱。
+4.  完成後，帳號即與 LINE Developers Console 連結。
+
+### 3. 取得開發金鑰
+請跳轉至 [LINE Developers Console](https://developers.line.biz/console/) 進行：
+1.  **取得 Channel Secret**：
+    *   在 Console 中進入該 Channel，預設於 **Basic settings** 分頁。
+    *   向下捲動到底部即可看到 `Channel secret`。
+2.  **取得 Channel Access Token**：
+    *   點選 **Messaging API** 分頁。
+    *   捲動到頁面最下方，找到 **Channel access token**。
+    *   點擊「**Issue**」(發行)，取得產生的字串 (long-lived)。
+
+### 4. 關閉自動回應（重要）
+為了讓程式碼完全接管訊息，請進行以下設定：
+1.  回到 LINE Official Account Manager。
+2.  點擊右上角「**設定**」 > 「**回應設定**」。
+    *   **回應模式**：設定為「聊天機器人」。
+    *   **進階設定**：
+        *   **自動回應訊息**：停用。
+        *   **Webhook**：啟用（部署 Server 後開啟）。
 
 ## ☁️ 第二階段：Google Cloud 專案設定與開通
 
