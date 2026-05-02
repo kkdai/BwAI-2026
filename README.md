@@ -201,8 +201,34 @@ Gemini CLI 具備「自動化部署」的能力，你只需要用自然語言下
 5. 開啟 **Use webhook** 選項。
 6. **關閉自動回應**：在 LINE Official Account Manager 的「回應設定」中，將回應模式設為「聊天機器人」，並停用「自動回應訊息」。
 
-> [!CAUTION]
-> **Channel Secret** 與 **Channel Access Token** 屬於敏感資訊，請務必妥善保管，**切勿直接提交至 GitHub**。
+---
+
+# 🔍 驗證與測試 MCP 服務
+
+安裝完成後，你可以透過以下測試指令來確認 MCP Server 是否已正確掛載並運作。
+
+## 1. 測試 Google Developer Knowledge API
+這個 MCP 讓 Gemini 能夠讀取最新的 Google 官方文件。
+
+*   **測試 Prompt：**
+    > "請幫我查詢 Google Cloud Run 的最新部署限制（Deployment Limits），並列出前三項。"
+*   **驗證重點：**
+    *   Gemini 應該會調用 `google-developer-knowledge` 工具。
+    *   回覆內容應包含來自 `cloud.google.com` 或 `developer.android.com` 等官方網域的資訊。
+    *   回覆末尾通常會附上參考來源連結。
+
+## 2. 測試 Google Maps Platform Code Assist
+這個 MCP 專門協助開發者撰寫 Google Maps 相關的程式碼與 API 整合。
+
+*   **測試 Prompt：**
+    > "我想在網頁中嵌入一個 Google 地圖，請幫我寫出一段基本的 JavaScript 程式碼來顯示地圖，中心點設在台北 101。"
+*   **驗證重點：**
+    *   Gemini 應該會調用 `google-maps-platform-code-assist` 工具。
+    *   生成的程式碼應包含 Maps JavaScript API 的正確載入方式與初始化語法。
+    *   它可能會主動提醒你關於 `API Key` 的設定以及相關的安全性建議。
+
+## 💡 測試小技巧
+在 `gemini` 互動模式下，你可以輸入 `/mcp list` 來查看目前所有已啟動的 MCP Server 列表，確保它們的狀態為 **Connected**。
 
 
 
