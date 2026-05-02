@@ -9,6 +9,10 @@ Slides and related material about BwAI2026 training.
 * **2026/03/26** - [[Gemini] Tool Combo 實戰：在單次 API 呼叫中結合 Maps Grounding 與 Places API 打造 LINE 聚會地點小幫手](https://www.evanlin.com/gemini3-flash-combo/)
 
 ---
+
+
+# Workshop 1: 安裝 Gemini_CLI, Gcloud Console 與相關的 Google 官方 MCP 服務
+
 ## 安裝 Gcloud 與 Gemini CLI 工具
 
 ### 1. 安裝 Google Cloud SDK (gcloud)
@@ -80,11 +84,11 @@ gemini mcp add google-maps-platform-code-assist npx -y @googlemaps/code-assist-m
 
 ---
 
-## 🤖 Workshop - 打造 LINE Bot
+# 🤖 Workshop 2 - 打造 LINEBot 來幫你儲存檔案在 Google Drive 中
 
 本章節指導如何取得開發所需的 **Channel Secret** 與 **Channel Access token**。
 
-### 第一階段：建立官方帳號
+## 第一階段：建立官方帳號
 1. 進入 [LINE Business ID](https://manager.line.biz/) 登入頁面。
 2. 存取 **LINE Official Account Manager**，選擇「使用 LINE 帳號登入」或「使用商用帳號登入」。
 3. **建立新帳號**：
@@ -94,13 +98,13 @@ gemini mcp add google-maps-platform-code-assist npx -y @googlemaps/code-assist-m
    - 電子郵件信箱。
 4. 確認資料無誤後點擊「送出」。
 
-### 第二階段：啟用 Messaging API
+## 第二階段：啟用 Messaging API
 1. 在後台右上角點擊「**設定**」，左側選單點選「**Messaging API**」。
 2. 點擊「**啟用 Messaging API**」。
 3. **選擇/建立服務提供者 (Provider)**：輸入開發商名稱。
 4. 完成後，帳號即與 LINE Developers Console 連結。
 
-### 第三階段：取得開發金鑰
+## 第三階段：取得開發金鑰
 請跳轉至 [LINE Developers Console](https://developers.line.biz/console/) 進行：
 
 1. **取得 Channel Secret**：
@@ -111,7 +115,7 @@ gemini mcp add google-maps-platform-code-assist npx -y @googlemaps/code-assist-m
    - 捲動到頁面最下方，找到 **Channel access token**。
    - 點擊「**Issue**」(發行)，取得產生的字串 (long-lived)。
 
-### 第四階段：關閉自動回應（重要）
+## 第四階段：關閉自動回應（重要）
 為了讓程式碼完全接管訊息，請進行以下設定：
 1. 回到 LINE Official Account Manager。
 2. 點擊右上角「**設定**」 > 「**回應設定**」。
