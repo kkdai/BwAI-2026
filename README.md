@@ -112,20 +112,42 @@ cd bwai2026-sample
 
 ## 🔐 第三階段：設定 OAuth 與身分驗證
 
-Gemini CLI 需要正確的身分驗證才能進行部署。
+Gemini CLI 需要透過 Google OAuth 進行身分驗證，才能代表你操作 Google Cloud 資源。以下是詳細的設定步驟：
 
-1. **Gemini CLI 登入：**
-   初次執行時選擇 **"Sign in with Google"**。
-2. **OAuth 重新設定：**
-   若需更換帳號或重新驗證，可使用：
-   ```bash
-   /auth
-   ```
-3. **ADC 驗證 (推薦)：**
-   確保本機環境已通過應用程式預設認證：
-   ```bash
-   gcloud auth application-default login
-   ```
+### 1. 設定 OAuth 同意畫面 (OAuth Consent Screen)
+在建立憑證之前，必須先設定同意畫面：
+1.  進入 [Google Cloud Console - OAuth 同意畫面](https://console.cloud.google.com/auth/consent)。
+2.  **User Type**：選擇「**外部 (External)**」（若為 Workspace 帳號可選內部），點擊「建立」。
+3.  **應用程式資訊**：
+    *   **應用程式名稱**：例如 `My Gemini CLI`。
+    *   **使用者支援電子郵件**：選擇你的 Gmail。
+    *   **開發者聯絡資訊**：填入你的電子郵件。
+4.  點擊「儲存並繼續」，其餘步驟（範圍、測試使用者）可直接跳過或點擊「儲存並繼續」。
+5.  最後回到儀表板，點擊「**發布應用程式**」並確認，這樣 OAuth 才能正式運作。
+
+### 2. 建立 OAuth 客戶端 ID (OAuth Client ID)
+1.  進入 [Google Cloud Console - 憑證 (Credentials)](https://console.cloud.google.com/auth/clients)。
+2.  點擊「**建立憑證**」 -> 「**OAuth 客戶端 ID**」。
+3.  **應用程式類型**：選擇「**電腦版應用程式 (Desktop App)**」。
+4.  **名稱**：自訂名稱（例如 `Gemini CLI Client`）。
+5.  點擊「建立」，系統會彈出一個包含 `Client ID` 與 `Client Secret` 的視窗。
+    *   *註：Gemini CLI 在初次登入時會自動處理認證流程，通常不需手動填入這些金鑰，但確保專案中有此憑證是必要的。*
+
+### 3. 使用 Gemini CLI 進行登入
+1.  **初次登入：**
+    執行 `gemini` 指令時，選擇 **"Sign in with Google"**，這會開啟瀏覽器讓你選擇 Google 帳號。
+2.  **ADC 驗證 (強烈建議)：**
+    為了讓背景部署指令順利執行，請在本機終端機執行：
+    ```bash
+    gcloud auth application-default login
+    ```
+    這會將憑證儲存在本機，供 `gcloud` 與 `gemini-cli` 使用。
+3.  **重新驗證：**
+    若需切換帳號或權限過期，可輸入：
+    ```bash
+    /auth
+    ```
+
 
 ## 🚀 第四階段：使用 Gemini CLI 部署至 Cloud Run
 
