@@ -9,6 +9,47 @@ Slides and related material about BwAI2026 training.
 * **2026/03/26** - [[Gemini] Tool Combo 實戰：在單次 API 呼叫中結合 Maps Grounding 與 Places API 打造 LINE 聚會地點小幫手](https://www.evanlin.com/gemini3-flash-combo/)
 
 ---
+## 安裝 Gcloud 與 Gemini CLI 工具
+
+### 1. 安裝 Google Cloud SDK (gcloud)
+`gcloud` 是與 Google Cloud 服務互動的核心工具，Gemini CLI 依賴它進行身分驗證。
+
+*   **macOS (Homebrew):**
+    ```bash
+    brew install --cask google-cloud-sdk
+    ```
+*   **Linux (Debian/Ubuntu):**
+    ```bash
+    curl https://sdk.cloud.google.com | bash
+    exec -l $SHELL
+    ```
+*   **Windows:** 
+    請下載並執行 [Google Cloud SDK 安裝程式](https://cloud.google.com/sdk/docs/install#windows)。
+
+**初始化與登入：**
+安裝完成後，請執行以下指令完成授權：
+```bash
+gcloud init
+gcloud auth application-default login
+```
+
+### 2. 安裝 Gemini CLI
+
+Gemini CLI 是一個強大的終端機工具，讓你直接在命令列與 Gemini 模型互動並管理 MCP Server。
+
+**安裝指令：**
+
+```Bash
+npm install -g @google/gemini-cli
+```
+
+註：請確保系統已安裝 Node.js (v18 以上版本)。
+
+**驗證安裝：**
+
+```Bash
+gemini --version
+```
 
 ## 🛠 Gemini CLI 建議裝的官方 MCP
 
@@ -82,10 +123,4 @@ gemini mcp add google-maps-platform-code-assist npx -y @googlemaps/code-assist-m
 > [!CAUTION]
 > **Channel Secret** 與 **Channel Access Token** 屬於敏感資訊，請務必妥善保管，**切勿上傳到 GitHub 等公開環境**。
 
----
 
-## 🧰 更多 AI 工程師需要工具
-
-* [AI Engineers Starter Pack Vol.4](https://www.aiengineerpack.com/?success=1)
-
-<img width="395" alt="image" src="https://github.com/user-attachments/assets/5bc31c86-f6c1-44cd-a5d0-67893242edca" />
