@@ -70,7 +70,7 @@ gemini mcp add -t http -H "X-Goog-Api-Key: YOUR_API_KEY" google-developer-knowle
 詳細教學：[部落格連結](https://www.evanlin.com/map-mcp-grounding/)
 
 ```bash
-gemini mcp add google-maps-platform-code-assist npx -y @googlemaps/code-assist-mcp@latest
+gemini mcp add -s user -t http maps-code-assist-mcp https://mapscodeassist.googleapis.com/mcp
 ```
 
 ---
