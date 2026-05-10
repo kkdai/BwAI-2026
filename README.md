@@ -93,7 +93,7 @@ gemini mcp add -s user -t http maps-code-assist-mcp https://mapscodeassist.googl
 這個 MCP 專門協助開發者撰寫 Google Maps 相關的程式碼與 API 整合。
 
 *   **測試 Prompt：**
-    > "我想在網頁中嵌入一個 Google 地圖，請幫我寫出一段基本的 JavaScript 程式碼來顯示地圖，中心點設在台北 101。 使用 mcp Google Maps Platform Code Assist"
+    > "我想在網頁中嵌入一個 Google 地圖，請幫我寫出一段基本的 JavaScript 程式碼來顯示地圖，中心點設在台北 101。"
 *   **驗證重點：**
     *   Gemini 應該會調用 `google-maps-platform-code-assist` 工具。
     *   生成的程式碼應包含 Maps JavaScript API 的正確載入方式與初始化語法。
