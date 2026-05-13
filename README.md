@@ -20,6 +20,10 @@ Slides and related material about BwAI2026 training.
 
 <img width="1139" height="193" alt="image" src="https://github.com/user-attachments/assets/1b601755-e770-4532-98e9-669e9c418816" />
 
+### 確認 Project ID
+
+<img width="796" height="193" alt="image" src="https://github.com/user-attachments/assets/c55b652e-c105-465b-a923-1e418f82830f" />
+
 ### 啟動 Google Cloud Shell
 
 <img width="222" height="137" alt="image" src="https://github.com/user-attachments/assets/3a4d99e3-4e97-41a7-b3ab-b5e62aa1ebbc" />
