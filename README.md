@@ -14,48 +14,35 @@ Slides and related material about BwAI2026 training.
 
 本章節指導如何安裝 `gcloud`、`Gemini CLI` 以及相關的 MCP 服務。
 
-## 📦 安裝 Gcloud 與 Gemini CLI
+## 透過 Google Cloud Shell 直接啟動
 
-### 1. 安裝 Google Cloud SDK (gcloud)
-`gcloud` 是與 Google Cloud 服務互動的核心工具，Gemini CLI 依賴它進行身分驗證。
+### 啟動 Google Cloud Shell
 
-*   **macOS (Homebrew):**
-    ```bash
-    brew install --cask google-cloud-sdk
-    ```
-*   **Linux (Debian/Ubuntu):**
-    ```bash
-    curl https://sdk.cloud.google.com | bash
-    exec -l $SHELL
-    ```
-*   **Windows:**
-    請下載並執行 [Google Cloud SDK 安裝程式](https://cloud.google.com/sdk/docs/install#windows)。
+<img width="222" height="137" alt="image" src="https://github.com/user-attachments/assets/3a4d99e3-4e97-41a7-b3ab-b5e62aa1ebbc" />
 
-**初始化與登入：**
-安裝完成後，請執行以下指令完成授權：
-```bash
-gcloud init
-gcloud auth application-default login
+### 確定專案是新建的
+
+<img width="829" height="79" alt="image" src="https://github.com/user-attachments/assets/93b918d9-cea8-40ec-a7d7-7649131f393a" />
+
+- 測試 gcloud
+
+```
+gcloud
 ```
 
-### 2. 安裝 Gemini CLI
-Gemini CLI 是直接在終端機與 Gemini 模型互動並管理 MCP Server 的強大工具。
+- 測試 gemini
 
-> [!NOTE]
-> 請確保系統已安裝 Node.js (v18 以上版本)。
-
-```bash
-npm install -g @google/gemini-cli
 ```
-
-**驗證安裝：**
-```bash
-gemini --version
+gemini
 ```
 
 ## 🔌 建議安裝的官方 MCP
 
-### 1. Google Developer Knowledge API
+#### 1. 原本就有 VertexMCP Server
+
+<img width="593" height="272" alt="image" src="https://github.com/user-attachments/assets/95006c28-7fde-4e93-8a89-5dcd6c146c8e" />
+
+### 2. Google Developer Knowledge API
 為你的 AI 助手裝上官方知識庫。詳細教學：[部落格連結](https://www.evanlin.com/gemini-cli-developer-mcp/)
 
 **設定步驟：**
@@ -66,7 +53,7 @@ gemini --version
 gemini mcp add -t http -H "X-Goog-Api-Key: YOUR_API_KEY" google-developer-knowledge https://developerknowledge.googleapis.com/mcp --scope user
 ```
 
-### 2. Google Maps Platform Code Assist
+### 3. Google Maps Platform Code Assist
 詳細教學：[部落格連結](https://www.evanlin.com/map-mcp-grounding/)
 
 ```bash
