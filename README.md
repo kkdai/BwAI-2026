@@ -16,6 +16,10 @@ Slides and related material about BwAI2026 training.
 
 ## 透過 Google Cloud Shell 直接啟動
 
+### 確認專案已經選擇好了
+
+<img width="1139" height="193" alt="image" src="https://github.com/user-attachments/assets/1b601755-e770-4532-98e9-669e9c418816" />
+
 ### 啟動 Google Cloud Shell
 
 <img width="222" height="137" alt="image" src="https://github.com/user-attachments/assets/3a4d99e3-4e97-41a7-b3ab-b5e62aa1ebbc" />
