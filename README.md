@@ -54,8 +54,12 @@ gemini
 為你的 AI 助手裝上官方知識庫。詳細教學：[部落格連結](https://www.evanlin.com/gemini-cli-developer-mcp/)
 
 **設定步驟：**
-1. 前往 [Google Developer Console](https://console.cloud.google.com/) 啟用 **"Developer Knowledge API"**。
+1. 前往 [Google Developer Console](https://console.cloud.google.com/) 啟用 **"Developer Knowledge API"**。 ([網址]([url](https://console.cloud.google.com/marketplace/product/google/developerknowledge.googleapis.com))）
 2. **取得 API Key：** 建立憑證 -> API 金鑰，並限制為 Developer Knowledge API。
+<img width="797" height="244" alt="image" src="https://github.com/user-attachments/assets/09233f8b-a6a3-4c68-84f3-20fa56cbd562" />
+<img width="583" height="790" alt="image" src="https://github.com/user-attachments/assets/c1aeb0cf-2f42-4905-bdf1-444612f99ca9" />
+
+
 3. **安裝 MCP：**
 ```bash
 gemini mcp add -t http -H "X-Goog-Api-Key: YOUR_API_KEY" google-developer-knowledge https://developerknowledge.googleapis.com/mcp --scope user
